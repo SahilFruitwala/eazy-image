@@ -129,7 +129,7 @@ export function ImageControls({ processedImage, onProcessImage, onReset }: Image
                   Maintain aspect ratio
                 </Label>
               </div>
-              <div className="flex gap-2 mt-4">
+              <div className="flex flex-col gap-2 mt-4">
                 <Button onClick={handleResize} className="w-full">Apply Resize</Button>
                 <Button onClick={() => onReset()} variant="secondary" className="w-full">Reset</Button>
               </div>

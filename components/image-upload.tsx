@@ -57,7 +57,7 @@ export function ImageUpload({ onImageUpload }: ImageUploadProps) {
       onClick={() => fileInputRef.current?.click()}
     >
       <div className="flex flex-col items-center justify-center gap-4">
-        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-400/20 to-blue-500/20 flex items-center justify-center">
+        <div className="w-16 h-16 rounded-full bg-linear-to-br from-cyan-400/20 to-blue-500/20 flex items-center justify-center">
           <span className="text-cyan-400 text-3xl">🖼</span>
         </div>
         <div>
@@ -65,7 +65,7 @@ export function ImageUpload({ onImageUpload }: ImageUploadProps) {
           <p className="text-slate-400 mb-4">Drag and drop your image here or click to browse</p>
           <p className="text-sm text-slate-500">Supports JPG, PNG, WebP, BMP and more</p>
         </div>
-        <Button className="mt-4 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white">
+        <Button className="mt-4 bg-linear-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white">
           Choose Image
         </Button>
       </div>

@@ -18,56 +18,56 @@ interface ImagePreviewProps {
 
 export function ImagePreview({ uploadedImage, processedImage, canvasRef }: ImagePreviewProps) {
   return (
-    <div className="space-y-6">
-      {/* Original Image */}
-      <Card className="p-6 bg-slate-900/50 border-slate-700">
-        <h3 className="text-sm font-semibold text-slate-300 mb-4">Original Image</h3>
-        <div className="bg-slate-950 rounded-lg overflow-hidden flex items-center justify-center min-h-80">
+    <div className="space-y-8">
+      <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div className="p-6">
+          <h3 className="text-lg font-semibold mb-4">Original Image</h3>
+          <div className="bg-muted/50 rounded-lg overflow-hidden flex items-center justify-center min-h-[300px]">
+            {uploadedImage && (
+              <img
+                src={uploadedImage.src || "/placeholder.svg"}
+                alt="Original"
+                className="max-w-full max-h-[400px] object-contain"
+              />
+            )}
+          </div>
           {uploadedImage && (
-            <img
-              src={uploadedImage.src || "/placeholder.svg"}
-              alt="Original"
-              className="max-w-full max-h-96 object-contain"
-            />
+            <div className="grid grid-cols-2 gap-4 mt-4 text-sm">
+              <div>
+                <p className="text-muted-foreground text-xs mb-1">Width</p>
+                <p className="font-semibold">{uploadedImage.naturalWidth}px</p>
+              </div>
+              <div>
+                <p className="text-muted-foreground text-xs mb-1">Height</p>
+                <p className="font-semibold">{uploadedImage.naturalHeight}px</p>
+              </div>
+            </div>
           )}
         </div>
-        {uploadedImage && (
-          <div className="grid grid-cols-2 gap-4 mt-4 text-sm text-slate-400">
-            <div>
-              <p className="text-slate-500 text-xs mb-1">Width</p>
-              <p className="text-white font-semibold">{uploadedImage.naturalWidth}px</p>
-            </div>
-            <div>
-              <p className="text-slate-500 text-xs mb-1">Height</p>
-              <p className="text-white font-semibold">{uploadedImage.naturalHeight}px</p>
-            </div>
-          </div>
-        )}
-      </Card>
+      </div>
 
-      {/* Processed Image */}
-      {processedImage.width > 0 && (
-        <Card className="p-6 bg-slate-900/50 border-slate-700">
-          <h3 className="text-sm font-semibold text-slate-300 mb-4">Preview</h3>
-          <div className="bg-slate-950 rounded-lg overflow-hidden flex items-center justify-center min-h-80">
-            <canvas ref={canvasRef} className="max-w-full max-h-96 object-contain" />
+      <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div className="p-6">
+          <h3 className="text-lg font-semibold mb-4">Processed Image</h3>
+          <div className="bg-muted/50 rounded-lg overflow-hidden flex items-center justify-center min-h-[300px]">
+            <canvas ref={canvasRef} className="max-w-full max-h-[400px] object-contain" />
           </div>
           <div className="grid grid-cols-3 gap-4 mt-4 text-sm">
             <div>
-              <p className="text-slate-500 text-xs mb-1">Width</p>
-              <p className="text-white font-semibold">{processedImage.width}px</p>
+              <p className="text-muted-foreground text-xs mb-1">Width</p>
+              <p className="font-semibold">{processedImage.width}px</p>
             </div>
             <div>
-              <p className="text-slate-500 text-xs mb-1">Height</p>
-              <p className="text-white font-semibold">{processedImage.height}px</p>
+              <p className="text-muted-foreground text-xs mb-1">Height</p>
+              <p className="font-semibold">{processedImage.height}px</p>
             </div>
             <div>
-              <p className="text-slate-500 text-xs mb-1">Format</p>
-              <p className="text-white font-semibold uppercase">{processedImage.format}</p>
+              <p className="text-muted-foreground text-xs mb-1">Format</p>
+              <p className="font-semibold uppercase">{processedImage.format}</p>
             </div>
           </div>
-        </Card>
-      )}
+        </div>
+      </div>
     </div>
   )
 }

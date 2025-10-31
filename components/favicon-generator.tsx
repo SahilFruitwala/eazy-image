@@ -51,14 +51,15 @@ export function FaviconGenerator({ image }: FaviconGeneratorProps) {
   }
 
   return (
-    <Card className="p-6 bg-slate-900/50 border-slate-700">
-      <h3 className="text-sm font-semibold text-slate-300 mb-4">Favicon Generator</h3>
-      <p className="text-xs text-slate-400 mb-4">
-        Generate a set of favicons for your website from the processed image.
-      </p>
-      <Button onClick={generateFavicons} disabled={isGenerating} className="w-full">
-        {isGenerating ? "Generating..." : "Generate & Download Favicons"}
-      </Button>
-    </Card>
+    <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+      <div className="p-6">
+        <h3 className="text-lg font-semibold mb-4">Favicon Generator</h3>
+        <div className="space-y-2">
+          <Button onClick={generateFavicons} disabled={isGenerating} className="w-full">
+            {isGenerating ? "Generating..." : "Generate & Download Favicons"}
+          </Button>
+        </div>
+      </div>
+    </div>
   )
 }

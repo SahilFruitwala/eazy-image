@@ -130,7 +130,7 @@ export function ImageProcessor() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-[1fr_350px] gap-8">
-            <div className="space-y-8">
+              <div className="space-y-8">
               <ImagePreview uploadedImage={uploadedImage} processedImage={processedImage} canvasRef={canvasRef} />
             </div>
 

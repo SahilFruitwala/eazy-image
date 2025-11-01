@@ -13,7 +13,7 @@ interface ImagePreviewProps {
     width: number
     height: number
   }
-  canvasRef: React.RefObject<HTMLCanvasElement>
+  canvasRef: React.RefObject<HTMLCanvasElement| null>
 }
 
 export function ImagePreview({ uploadedImage, processedImage, canvasRef }: ImagePreviewProps) {

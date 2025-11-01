@@ -61,7 +61,7 @@ export function ImageUpload({ onImageUpload }: ImageUploadProps) {
           <span className="text-cyan-400 text-3xl">🖼</span>
         </div>
         <div>
-          <h2 className="text-xl md:text-2xl font-semibold text-white mb-2">Upload Your Image</h2>
+          <h2 className="text-xl md:text-2xl font-semibold text-slate mb-2">Upload Your Image</h2>
           <p className="text-slate-400 mb-4">Drag and drop your image here or click to browse</p>
           <p className="text-sm text-slate-500">Supports JPG, PNG, WebP, BMP and more</p>
         </div>

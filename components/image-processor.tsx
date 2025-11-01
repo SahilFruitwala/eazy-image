@@ -94,12 +94,12 @@ export function ImageProcessor() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-10 border-b bg-background/80 backdrop-blur-lg">
+      <header className="sticky top-0 z-10 border-b backdrop-blur-lg">
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
-                <Image src="/favicon.png" alt="Logo" width={24} height={24} />
+              <div className="w-8 h-8 rounded-full flex items-center justify-center">
+                <Image src="/favicon.png" alt="Logo" width={24} height={24} className="rounded-full"/>
               </div>
               <h1 className="text-xl font-semibold">Eazy Image</h1>
             </div>

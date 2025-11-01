@@ -9,6 +9,7 @@ import { CompressionInfo } from "./compression-info"
 import { DownloadSection } from "./download-section"
 import { FaviconGenerator } from "./favicon-generator"
 import Image from "next/image"
+import { ModeToggle } from "./theme-toggle"
 
 interface ProcessedImage {
   canvas: HTMLCanvasElement | null
@@ -102,6 +103,7 @@ export function ImageProcessor() {
               </div>
               <h1 className="text-xl font-semibold">Eazy Image</h1>
             </div>
+            <div className="flex items-center gap-4">
             {uploadedImage && (
               <Button
                 variant="outline"
@@ -119,6 +121,8 @@ export function ImageProcessor() {
                 Upload New
               </Button>
             )}
+              <ModeToggle />
+            </div>
           </div>
         </div>
       </header>
